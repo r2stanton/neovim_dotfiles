@@ -1,5 +1,5 @@
 ## neovim_dotfiles
-Basic neovim setup in vimscript which is meant to be friendly to setups on systems where you don't have perms to setup things as you might like (e.g. on HPCs). All requirements can be handled through HPC friendly package managers (see links below in requirements, all of which are obtainable through pip/conda/npm, at least one of which you should have access to on HPC)
+Basic neovim setup in vimscript which is meant to be friendly to setups on systems where you don't have perms to setup things as you might like (e.g. on HPCs). All requirements can be handled through HPC friendly package managers. See links below for requirements, all of which are obtainable through pip/conda/npm, at least one of which you should have access to on your cluster.
 
 This is not meant to be an elaborate config, just something to get started with the basics, e.g. NerdTree, NerdCommenter, airline, some colorschemes, and GitHub Copilot.
 
@@ -19,7 +19,7 @@ Setup:
 - https://github.com/neovim/neovim/wiki/Installing-Neovim
 
 ### Bindings
-A number of these bindings are the defaults from the plugin, however this is meant to act more as a 'cheatsheet' than a changelog.
+A number of these bindings are the defaults from the corresponding plugin, however this is meant to act more as a 'cheatsheet' than a changelog.
 - Leader = SPACE
 - Toggle NerdTree = Leader+Tab
 - NerdCommenter
@@ -29,6 +29,7 @@ A number of these bindings are the defaults from the plugin, however this is mea
 - Move to next file in buffer = Leader+1
 - Move to previous file in buffer = Leader+2
 - Close file in buffer = Leader+l
+- Toggle Copilot with :Copilot enable, :Copilot disable once neovim is open.
 
 ### Miscellaneous
 This is meant to serve as the go-to for how to change the configuration if you're not familiar with the format of the vimscript init.vim file. The format is "desired change" : "what you need to search for in the init.vim file to make the desired change."
