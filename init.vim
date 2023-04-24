@@ -1,5 +1,43 @@
 let mapleader = " "
 
+" Plugins
+call plug#begin('~/.vim/plugged/')
+"# Colorschemes
+Plug 'morhetz/gruvbox'
+Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
+Plug 'rebelot/kanagawa.nvim'
+Plug 'sainnhe/gruvbox-material'
+Plug 'kyazdani42/blue-moon'
+"# Nerd
+Plug 'scrooloose/nerdtree'
+Plug 'preservim/nerdcommenter'
+"# Status bar/airline themes.
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+"# Don't really like much
+Plug 'jiangmiao/auto-pairs'
+"# ? 
+Plug 'norcalli/nvim-colorizer.lua'
+"# Copilot
+Plug 'github/copilot.vim'
+" LaTeX
+Plug 'lervag/vimtex'
+
+call plug#end()
+
+set background=dark
+"colorscheme gruvbox-material
+"
+"Catpuccin flavors
+colorscheme catppuccin " -latte, -frappe, -macchiato, -mocha
+
+" Change the path here to wherever you put your skeleton files.
+if has ("autocmd")
+    augroup templates
+        autocmd BufNewFile *.tex 0r ~/.config/nvim/Templates/article.tex
+    augroup END
+endif
+
 " Split nav
 map <C-h> <C-w>h
 map <C-j> <C-w>j
@@ -30,68 +68,31 @@ set colorcolumn=80
 
 
 
-call plug#begin('~/.vim/plugged/')
-
-"# Colorschemes
-Plug 'morhetz/gruvbox'
-Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
-Plug 'rebelot/kanagawa.nvim'
-Plug 'sainnhe/gruvbox-material'
-Plug 'kyazdani42/blue-moon'
-
-"# Nerd
-Plug 'scrooloose/nerdtree'
-Plug 'preservim/nerdcommenter'
-
-"# Status bar/airline themes.
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-
-"# Don't really like much
-Plug 'jiangmiao/auto-pairs'
-
-"# ? 
-Plug 'norcalli/nvim-colorizer.lua'
-
-"# Copilot
-Plug 'github/copilot.vim'
-
-"Plug 'sirver/ultisnips'
-
-
-call plug#end()
-set background=dark
-"colorscheme gruvbox-material
-"
-"Catpuccin flavors
-colorscheme catppuccin " -latte, -frappe, -macchiato, -mocha
 
 
 if (has("termguicolors"))
     set termguicolors
-endif 
+    endif 
 
-lua require 'colorizer'.setup()
+    lua require 'colorizer'.setup()
 
-" NERDCommenter
-nmap <C-_> <Plug>NERDCommenterToggle
-vmap <C-_> <Plug>NERCommenterToggle<CR>gv
+    " NERDCommenter
+    nmap <C-_> <Plug>NERDCommenterToggle
+    vmap <C-_> <Plug>NERCommenterToggle<CR>gv
 
-" NERDTree
-let NERDTreeQuitOnOpen=1
-let g:NERDTreeMinimalUI=1
-nmap <leader><tab> :NERDTreeToggle<CR>
-nmap <leader>l :bd <CR>
+    " NERDTree
+    let NERDTreeQuitOnOpen=1
+    let g:NERDTreeMinimalUI=1
+    nmap <leader><tab> :NERDTreeToggle<CR>
+    nmap <leader>- :bd <CR>
 
-" Nerdtree alternative, but much worse.
-"inoremap <c-b> <Esc>:Lex<cr>:vertical resize 30 <cr>
-"nnoremap <c-b> <Esc>:Lex<cr>:vertical resize 30 <cr>
-
-
-" Tabs
-let g:airline#extensions#tabline#enabled=1
-let g:airline#extensions#tabline#fnamemode=':t'
-nmap <leader>1 :bp<CR>
-nmap <leader>2 :bn<CR>
+    " Nerdtree alternative, but much worse.
+    "inoremap <c-b> <Esc>:Lex<cr>:vertical resize 30 <cr>
+    "nnoremap <c-b> <Esc>:Lex<cr>:vertical resize 30 <cr>
 
 
+    " Tabs
+    let g:airline#extensions#tabline#enabled=1
+    let g:airline#extensions#tabline#fnamemode=':t'
+    nmap <leader>1 :bp<CR>
+    nmap <leader>2 :bn<CR>

@@ -13,10 +13,17 @@ Setup:
 ### Requirements
 1. vim-plug, as it's the package manager
 - https://github.com/junegunn/vim-plug
-2. node.js > 16.0 if you want Copilot 
-- https://docs.npmjs.com/downloading-and-installing-node-js-and-npm
 3. neovim
 - https://github.com/neovim/neovim/wiki/Installing-Neovim
+#### Optional
+3. For Copilot support
+- node.js > 16.0 
+- https://docs.npmjs.com/downloading-and-installing-node-js-and-npm
+4. For latex support
+- vimtex plugin support is included in init.vim
+- You'll need a vim compiler like latexmk which you can get via ```conda install -c conda-forge latexmk```
+- Also you'll likely need pdflatex ```conda install -c conda-forge texlive-core```
+
 
 ### Bindings
 A number of these bindings are the defaults from the corresponding plugin, however this is meant to act more as a 'cheatsheet' than a changelog.
@@ -28,7 +35,7 @@ A number of these bindings are the defaults from the corresponding plugin, howev
 - Navigate splits = Ctrl+hjkl for split direction
 - Move to next file in buffer = Leader+1
 - Move to previous file in buffer = Leader+2
-- Close file in buffer = Leader+l
+- Close file in buffer = Leader+-
 - Toggle Copilot with :Copilot enable, :Copilot disable once neovim is open.
 
 ### Miscellaneous
