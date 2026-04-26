@@ -303,7 +303,7 @@ vim.cmd("set colorcolumn=80")
 
 -- [[ Configure Treesitter ]]
 -- See `:help nvim-treesitter`
-require('nvim-treesitter.configs').setup {
+require('nvim-treesitter.config').setup {
   -- Add languages to be installed here that you want installed for treesitter
   --ensure_installed = { 'c', 'cpp', 'go', 'lua', 'python', 'rust', 'tsx', 'typescript', 'vimdoc', 'vim' },
   ensure_installed = { 'c', 'go', 'lua', 'python', 'rust', 'vimdoc' },
@@ -457,16 +457,16 @@ mason_lspconfig.setup {
   ensure_installed = vim.tbl_keys(servers),
 }
 
-mason_lspconfig.setup_handlers {
-  function(server_name)
-    require('lspconfig')[server_name].setup {
-      capabilities = capabilities,
-      on_attach = on_attach,
-      settings = servers[server_name],
-      filetypes = (servers[server_name] or {}).filetypes,
-    }
-  end
-}
+--mason_lspconfig.setup_handlers {
+  --function(server_name)
+    --require('lspconfig')[server_name].setup {
+      --capabilities = capabilities,
+      --on_attach = on_attach,
+      --settings = servers[server_name],
+      --filetypes = (servers[server_name] or {}).filetypes,
+    --}
+  --end
+--}
 
 -- [[ Configure nvim-cmp ]]
 -- See `:help cmp`
